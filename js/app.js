@@ -14,7 +14,7 @@ function comprar() {
     } 
     
     else if(parseFloat(quantidadeSelecionada) < parseFloat(quantidadeIngressos.textContent)) {
-        quantidadeIngressos.innerHTML = `<span id="qtd-${tiposDeIngresso}"> ${parseFloat(quantidadeIngressos.textContent) - parseFloat(quantidadeSelecionada)} </span>`;
+        quantidadeIngressos.textContent = parseFloat(quantidadeIngressos.textContent) - parseFloat(quantidadeSelecionada);
     }
 
     limparQuantidade();
