@@ -4,23 +4,16 @@ function comprar() {
     let quantidadeIngressos = document.getElementById(`qtd-${tiposDeIngresso}`);
 
     if(parseFloat(quantidadeSelecionada) > parseFloat(quantidadeIngressos.textContent)) {
-        alert(`Restam apenas ${quantidadeIngressos.textContent} ingressos para ${tiposDeIngresso}`);
+        alert(`Restam apenas ${quantidadeIngressos.textContent} ingressos para ${tiposDeIngresso}!`);
         if(!tiposDeIngresso) {
             alert("Selecione um ingresso válido!");
         }
     }
-    else if(quantidadeSelecionada == 0 || quantidadeSelecionada == "" || quantidadeSelecionada < 0) {
+    else if(quantidadeSelecionada <= 0|| quantidadeSelecionada == "") {
         alert("Insira uma quantidade válida!");
-    } 
-    
-    else if(parseFloat(quantidadeSelecionada) < parseFloat(quantidadeIngressos.textContent)) {
+    }
+    else if(parseFloat(quantidadeSelecionada) <= parseFloat(quantidadeIngressos.textContent)) {
         quantidadeIngressos.textContent = parseFloat(quantidadeIngressos.textContent) - parseFloat(quantidadeSelecionada);
     }
-
-    limparQuantidade();
-}
-
-function limparQuantidade() {
-    quantidadeSelecionada = document.getElementById("qtd");
-    quantidadeSelecionada.value = "";
+    document.getElementById("qtd").value = "";
 }
