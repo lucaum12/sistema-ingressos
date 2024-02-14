@@ -9,7 +9,7 @@ function comprar() {
             alert("Selecione um ingresso válido!");
         }
     }
-    else if(quantidadeSelecionada <= 0|| quantidadeSelecionada == "") {
+    else if(quantidadeSelecionada <= 0 || quantidadeSelecionada == "") {
         alert("Insira uma quantidade válida!");
     }
     else if(parseFloat(quantidadeSelecionada) <= parseFloat(quantidadeIngressos.textContent)) {
